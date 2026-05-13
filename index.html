@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Homenagem às Mães</title>
+    <title>🌸 Homenagem Especial às Mães 🌸</title>
     <style>
         * {
             margin: 0;
@@ -12,100 +12,261 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #fbc2eb 0%, #a6c1ee 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Container principal que centraliza todo o conteúdo */
+        /* Flores decorativas animadas */
+        body::before {
+            content: "🌸";
+            font-size: 70px;
+            position: absolute;
+            top: 5%;
+            left: 2%;
+            opacity: 0.3;
+            animation: flutuar 8s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "🌷";
+            font-size: 90px;
+            position: absolute;
+            bottom: 5%;
+            right: 3%;
+            opacity: 0.25;
+            animation: flutuar 10s infinite reverse;
+            pointer-events: none;
+        }
+
+        @keyframes flutuar {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Container principal com vidro e brilho */
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 30px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            max-width: 90%;
-            width: 500px;
-            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 56px;
+            padding: 40px 35px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            max-width: 600px;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(255,245,250,0.7);
+            position: relative;
+            z-index: 2;
         }
 
         .container:hover {
-            transform: translateY(-5px);
+            transform: scale(1.01);
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.96);
         }
 
-        /* Estilização do título */
+        /* Cabeçalho com coração */
         h1 {
-            font-size: 2.5rem;
-            color: #d63384;
-            margin-bottom: 30px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 2px;
-            word-wrap: break-word;
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, #D23369, #B23C6F, #8E2E5A);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        /* Container da foto */
+        .titulo-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        /* Frase de efeito */
+        .frase-emocional {
+            background: #ffeef4;
+            padding: 15px 20px;
+            border-radius: 70px;
+            margin: 15px 0 25px 0;
+            font-size: 1.15rem;
+            color: #aa2e5e;
+            font-weight: 500;
+            box-shadow: 0 5px 12px rgba(170, 46, 94, 0.1);
+            border-left: 5px solid #f9a8d4;
+            border-right: 5px solid #f9a8d4;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        .frase-emocional i {
+            font-style: normal;
+            display: inline-block;
+        }
+
+        .coracao-decor {
+            color: #ff6b9d;
+            font-size: 1.2rem;
+            margin: 0 5px;
+            animation: pulsar 1.5s infinite;
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); opacity: 0.7;}
+            100% { transform: scale(1.2); opacity: 1;}
+        }
+
+        /* Container da foto com moldura elegante */
         .foto-container {
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            margin: 20px 0 10px;
+            position: relative;
         }
 
-        .foto-container:hover {
-            transform: scale(1.02);
+        .moldura {
+            background: linear-gradient(135deg, #FFDEE9, #FFB5CC);
+            padding: 10px;
+            border-radius: 48px;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: 100%;
+        }
+
+        .moldura:hover {
+            transform: rotate(0.5deg) scale(1.01);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.4);
         }
 
         /* Estilização da imagem */
         .foto {
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            display: block;
+            transition: all 0.4s ease;
             border: 3px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
         }
 
-        /* Efeito de clique */
         .foto:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
-        /* Instrução para o usuário */
+        /* Botão carinho e instrução */
         .instrucao {
             margin-top: 20px;
-            color: #666;
+            background: rgba(255, 235, 245, 0.8);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
             font-size: 0.9rem;
+            color: #b13e6b;
+            font-weight: 600;
+            backdrop-filter: blur(2px);
+            transition: 0.2s;
+        }
+
+        .instrucao i {
+            font-style: normal;
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        /* Caixa de frases que mudam */
+        .frase-do-dia {
+            margin-top: 30px;
+            background: #fff4f9;
+            border-radius: 32px;
+            padding: 18px 16px;
+            border: 1px dashed #f3accb;
+            transition: 0.2s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .frase-do-dia p {
+            font-size: 1.18rem;
+            color: #2c3e50;
+            font-weight: 500;
+            line-height: 1.4;
             font-style: italic;
         }
 
-        /* Responsividade para telas menores */
-        @media (max-width: 600px) {
+        .assinatura {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #b5658c;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        /* contador de fotos e miniaturas */
+        .contador-fotos {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0 10px;
+        }
+
+        .bolinha {
+            width: 10px;
+            height: 10px;
+            background-color: #f3b0ce;
+            border-radius: 50%;
+            display: inline-block;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .bolinha.ativa {
+            background-color: #d63384;
+            width: 24px;
+            border-radius: 20px;
+            box-shadow: 0 0 6px #d63384;
+        }
+
+        /* Responsividade e embelezamento */
+        @media (max-width: 550px) {
             .container {
-                padding: 25px 20px;
+                padding: 28px 20px;
             }
-            
             h1 {
                 font-size: 1.8rem;
             }
-            
+            .frase-emocional {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            .frase-do-dia p {
+                font-size: 1rem;
+            }
             .foto {
                 max-width: 280px;
             }
         }
 
-        /* Animação de carregamento */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 1;
@@ -114,116 +275,339 @@
         }
 
         .container {
-            animation: fadeIn 0.6s ease-out;
+            animation: fadeInUp 0.7s ease-out;
         }
 
-        /* Estilo para mensagem de erro caso a imagem não carregue */
+        /* botão secreto carinho */
+        .btn-carinho {
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .btn-carinho:hover {
+            transform: scale(1.2);
+        }
+
+        /* mensagem de erro gentil */
         .erro-imagem {
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            padding: 20px;
-            border-radius: 15px;
+            background: #ffe0e7;
+            border-radius: 40px;
+            padding: 25px;
             text-align: center;
-            font-size: 0.9rem;
+            color: #b53b6b;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎉 Parabéns Mães 🎉</h1>
-        
-        <div class="foto-container" id="fotoContainer">
-            <img id="fotoPrincipal" class="foto" src="fotos/f1.jpg" alt="Foto de homenagem às mães" onerror="mostrarErroImagem()">
-        </div>
-        
-        <div class="instrucao">
-            💝 Clique na foto para ver outra imagem 💝
+
+<div class="container">
+    <h1>
+        <span class="titulo-icon">🌸</span> 
+        Para Mãe, com amor 
+        <span class="titulo-icon">🌺</span>
+    </h1>
+    
+    <!-- Frase afetiva flutuante -->
+    <div class="frase-emocional">
+        <span class="coracao-decor">❤️</span> 
+        O amor de mãe é a luz que ilumina todos os nossos caminhos 
+        <span class="coracao-decor">❤️</span>
+    </div>
+    
+    <!-- Foto com moldura + clique -->
+    <div class="foto-container" id="fotoContainer">
+        <div class="moldura">
+            <img id="fotoPrincipal" class="foto" src="fotos/f1.jpg" alt="Momentos especiais com mamãe" onerror="tratarErroImagem()">
         </div>
     </div>
 
-    <script>
-        // Lista de fotos disponíveis na pasta "fotos" conforme solicitado
-        const fotos = [
-            "fotos/f1.jpg",
-            "fotos/f2.jpg",
-            "fotos/f3.jpg"
-        ];
-        
-        // Índice da foto atual (começa com 0 - primeira foto)
-        let fotoAtual = 0;
-        
-        // Referência ao elemento da imagem
-        const imagemElement = document.getElementById('fotoPrincipal');
-        
-        // Função para trocar a foto quando clicar
-        function trocarFoto() {
-            // Avança para a próxima foto (com loop)
-            fotoAtual = (fotoAtual + 1) % fotos.length;
-            
-            // Cria um efeito de fade suave
-            imagemElement.style.opacity = '0.5';
-            
-            // Troca a imagem
-            imagemElement.src = fotos[fotoAtual];
-            
-            // Quando a imagem carregar, restaura a opacidade
-            imagemElement.onload = function() {
-                imagemElement.style.opacity = '1';
-            };
-            
-            // Caso a imagem demore ou não carregue, restaurar opacidade após 1 segundo
-            setTimeout(() => {
-                imagemElement.style.opacity = '1';
-            }, 1000);
+    <!-- Indicadores de imagem (bolinhas) -->
+    <div class="contador-fotos" id="indicadoresContainer"></div>
+    
+    <div class="instrucao">
+        💖✨ Clique na foto para revelar memórias especiais ✨💖
+    </div>
+    
+    <!-- Frases que mudam a cada clique também -->
+    <div class="frase-do-dia" id="fraseMotivacional">
+        <p>✨ “Mãe é poema que a vida escreve em versos de ternura.” ✨</p>
+        <div class="assinatura">🌿 Sua presença, nosso maior presente 🌿</div>
+    </div>
+    
+    <!-- pequeno botão simbólico de carinho -->
+    <div style="margin-top: 18px;">
+        <button class="btn-carinho" id="surpresaBtn" aria-label="carinho">🌹 Toque aqui com carinho 🌹</button>
+    </div>
+</div>
+
+<script>
+    // ======================= CONFIGURAÇÃO DAS FOTOS ========================
+    const fotos = [
+        "fotos/f1.jpg",
+        "fotos/f2.jpg",
+        "fotos/f3.jpg"
+    ];
+    
+    // Frases personalizadas e inspiradoras sobre mães (uma para cada foto)
+    const frasesAmor = [
+        {
+            texto: "✨ “Mãe, sua força é meu alicerce. Em cada sorriso seu, encontro o aconchego do mundo.” ✨",
+            assinatura: "🌸 Gratidão infinita, hoje e sempre 🌸"
+        },
+        {
+            texto: "💐 “Ser mãe é transformar o simples em eterno. Obrigada por cada gesto de amor silencioso.” 💐",
+            assinatura: "🌟 Teu colo é meu lugar seguro 🌟"
+        },
+        {
+            texto: "🌷 “Mãe, você é a artista mais linda da minha vida. Sua bondade floresce em mim a cada dia.” 🌷",
+            assinatura: "🍃 Com amor, sua maior fã 🍃"
         }
-        
-        // Função para mostrar erro caso a imagem não seja encontrada
-        function mostrarErroImagem() {
-            console.warn(`Erro ao carregar a imagem: ${imagemElement.src}`);
-            // Opcional: substituir por uma imagem padrão ou mensagem
-            imagemElement.alt = "Imagem não encontrada";
-            imagemElement.style.backgroundColor = "#f0f0f0";
-            imagemElement.style.padding = "40px";
-            
-            // Se preferir, pode descomentar a linha abaixo para mostrar uma mensagem na imagem
-            // imagemElement.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'%3E%3C/circle%3E%3Cpolyline points='21 15 16 10 5 21'%3E%3C/polyline%3E%3C/svg%3E";
-        }
-        
-        // Adicionar evento de clique na imagem
-        imagemElement.addEventListener('click', trocarFoto);
-        
-        // Verificar se todas as imagens existem ao carregar a página (opcional)
-        window.addEventListener('load', function() {
-            console.log('Site carregado! Fotos disponíveis:', fotos.length);
-            console.log('Primeira foto carregada:', fotos[0]);
-            
-            // Teste rápido para verificar se as imagens existem
-            fotos.forEach(foto => {
-                const testImg = new Image();
-                testImg.onload = () => console.log(`✅ ${foto} encontrada`);
-                testImg.onerror = () => console.warn(`❌ ${foto} NÃO encontrada - Verifique se o arquivo existe na pasta "fotos"`);
-                testImg.src = foto;
+    ];
+    
+    // Frases extras para aleatoriedade quando necessário (carinho surpresa)
+    const frasesExtras = [
+        "🌸 “Te amo mais que as estrelas do céu e todas as flores da terra.” 🌸",
+        "🌺 “Obrigada por me ensinar o verdadeiro significado do amor incondicional.” 🌺",
+        "🌼 “Mãe, seu abraço cura qualquer tristeza. Você é meu lar.” 🌼",
+        "💖 “Nenhuma distância apaga o calor do seu amor. Parabéns, meu anjo!” 💖"
+    ];
+    
+    let fotoAtual = 0;
+    const imagemElement = document.getElementById('fotoPrincipal');
+    const containerIndicadores = document.getElementById('indicadoresContainer');
+    const fraseDiv = document.getElementById('fraseMotivacional');
+    const surpresaBtn = document.getElementById('surpresaBtn');
+    
+    // Criar indicadores (bolinhas)
+    function criarIndicadores() {
+        containerIndicadores.innerHTML = '';
+        fotos.forEach((_, index) => {
+            const bolinha = document.createElement('span');
+            bolinha.classList.add('bolinha');
+            if (index === fotoAtual) bolinha.classList.add('ativa');
+            bolinha.setAttribute('data-index', index);
+            bolinha.addEventListener('click', (e) => {
+                e.stopPropagation();
+                irParaFoto(index);
             });
+            containerIndicadores.appendChild(bolinha);
         });
-        
-        // Efeito de clique adicional no container para melhor experiência
-        const container = document.getElementById('fotoContainer');
-        container.addEventListener('click', function(e) {
-            // Previne que o evento se propague se clicar no container mas não na imagem
-            if(e.target === imagemElement) {
-                // Já tratado pelo evento da imagem
-                return;
+    }
+    
+    // Atualizar indicadores visuais
+    function atualizarIndicadores() {
+        const bolinhas = document.querySelectorAll('.bolinha');
+        bolinhas.forEach((bolinha, idx) => {
+            if (idx === fotoAtual) {
+                bolinha.classList.add('ativa');
+            } else {
+                bolinha.classList.remove('ativa');
             }
-            trocarFoto();
         });
+    }
+    
+    // Atualizar frase com base no índice da foto (com animação suave)
+    function atualizarFrasePorFoto(index) {
+        const fraseData = frasesAmor[index % frasesAmor.length];
+        if (fraseData) {
+            animarTransicaoFrase(fraseData.texto, fraseData.assinatura);
+        } else {
+            // fallback
+            animarTransicaoFrase("✨ Mãe, seu amor é a luz que nunca se apaga. ✨", "🌷 Para sempre no coração 🌷");
+        }
+    }
+    
+    // animação elegante para as frases
+    function animarTransicaoFrase(novoTexto, novaAssinatura) {
+        const pElement = fraseDiv.querySelector('p');
+        const assElement = fraseDiv.querySelector('.assinatura');
+        if (!pElement || !assElement) return;
         
-        // Animação de entrada
+        // fade out
+        fraseDiv.style.transition = 'opacity 0.2s';
+        fraseDiv.style.opacity = '0';
+        
+        setTimeout(() => {
+            pElement.innerHTML = novoTexto;
+            assElement.innerHTML = novaAssinatura;
+            fraseDiv.style.opacity = '1';
+        }, 180);
+    }
+    
+    // função principal trocar foto + frases temáticas + indicadores
+    function trocarFoto() {
+        // Avança para próxima foto (loop)
+        fotoAtual = (fotoAtual + 1) % fotos.length;
+        
+        // efeito sutil de transparência na imagem
+        imagemElement.style.transition = 'opacity 0.25s';
+        imagemElement.style.opacity = '0.6';
+        
+        // Troca a imagem
+        imagemElement.src = fotos[fotoAtual];
+        
+        // Quando carregar, restaura opacidade e atualiza frase + indicadores
+        imagemElement.onload = function() {
+            imagemElement.style.opacity = '1';
+            atualizarIndicadores();
+            atualizarFrasePorFoto(fotoAtual);
+        };
+        
+        // Fallback caso demore muito (evita imagem eternamente transparente)
+        setTimeout(() => {
+            if (imagemElement.style.opacity !== '1') {
+                imagemElement.style.opacity = '1';
+            }
+        }, 800);
+        
+        // Também atualiza indicadores e frase imediatamente (pré-carga)
+        atualizarIndicadores();
+        // Mesmo antes do load, a frase já combina com a foto selecionada
+        atualizarFrasePorFoto(fotoAtual);
+        
+        // Se alguma foto der erro na troca, tratamos com carinho
+        imagemElement.onerror = function() {
+            console.warn(`Erro na foto ${fotos[fotoAtual]}`);
+            imagemElement.style.opacity = '1';
+            // Definir uma imagem placeholder estilizada (não invasiva)
+            imagemElement.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23ffe0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23b53b6b' font-size='16' font-family='Segoe UI'%3E🌸 Momento Especial 🌸%3C/text%3E%3C/svg%3E";
+            imagemElement.alt = "Carregando homenagem";
+        };
+    }
+    
+    // Ir diretamente para uma foto específica (ao clicar na bolinha)
+    function irParaFoto(index) {
+        if (index === fotoAtual) return;
+        fotoAtual = index;
+        
+        imagemElement.style.transition = 'opacity 0.2s';
+        imagemElement.style.opacity = '0.5';
+        imagemElement.src = fotos[fotoAtual];
+        
+        imagemElement.onload = function() {
+            imagemElement.style.opacity = '1';
+            atualizarIndicadores();
+            atualizarFrasePorFoto(fotoAtual);
+        };
+        
+        atualizarIndicadores();
+        atualizarFrasePorFoto(fotoAtual);
+        
+        setTimeout(() => {
+            if (imagemElement.style.opacity !== '1') imagemElement.style.opacity = '1';
+        }, 500);
+        
+        imagemElement.onerror = function() {
+            imagemElement.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23ffe6f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23bf4d7a' font-size='14'%3E🌹 Lembrança que aquece 🌹%3C/text%3E%3C/svg%3E";
+        };
+    }
+    
+    // Tratar erro inicial da imagem (caso f1.jpg não exista)
+    function tratarErroImagem() {
+        console.warn(`Erro ao carregar imagem inicial: ${imagemElement.src}`);
+        // Gerar uma imagem suave e informativa com estilo floral
+        imagemElement.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fdeff4'/%3E%3Cpath fill='%23f3accb' d='M150,60 C120,30 70,40 60,80 C50,120 80,140 100,150 C80,160 50,180 60,220 C70,260 120,270 150,240 C180,270 230,260 240,220 C250,180 220,160 200,150 C220,140 250,120 240,80 C230,40 180,30 150,60Z' /%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23943e6b' font-size='20' font-weight='bold'%3E🌸 Mãe Amada 🌸%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='middle' text-anchor='middle' fill='%23943e6b' font-size='13'%3EClique para ver fotos%3C/text%3E%3C/svg%3E";
+        imagemElement.alt = "Homenagem especial para mamãe";
+    }
+    
+    // Extra: botão surpresa com carinho (exibe uma frase adicional e um coração animado)
+    function mostrarSurpresa() {
+        // seleciona uma frase aleatória das extras
+        const randomIndex = Math.floor(Math.random() * frasesExtras.length);
+        const fraseSorteada = frasesExtras[randomIndex];
+        // Guarda a assinatura atual
+        const assinaturaOriginal = "🌷 Carinho que transborda 🌷";
+        // anima transição rápida e depois retorna à frase da foto atual? 
+        // Vamos criar um efeito: exibir a mensagem surpresa temporariamente e depois restaurar a frase da foto atual
+        const pElement = fraseDiv.querySelector('p');
+        const assElement = fraseDiv.querySelector('.assinatura');
+        const textoOriginal = pElement.innerHTML;
+        const assOriginal = assElement.innerHTML;
+        
+        // Fazer fade out
+        fraseDiv.style.transition = 'opacity 0.15s';
+        fraseDiv.style.opacity = '0';
+        setTimeout(() => {
+            pElement.innerHTML = `💝 ${fraseSorteada} 💝`;
+            assElement.innerHTML = "✨ Toque especial do seu coração ✨";
+            fraseDiv.style.opacity = '1';
+            
+            // Depois de 2.8 segundos, restaurar frase original da foto atual
+            setTimeout(() => {
+                fraseDiv.style.opacity = '0';
+                setTimeout(() => {
+                    // restaurar de acordo com foto atual
+                    const fraseData = frasesAmor[fotoAtual % frasesAmor.length];
+                    pElement.innerHTML = fraseData.texto;
+                    assElement.innerHTML = fraseData.assinatura;
+                    fraseDiv.style.opacity = '1';
+                }, 150);
+            }, 2800);
+        }, 150);
+        
+        // Efeito visual no botão
+        surpresaBtn.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            surpresaBtn.style.transform = 'scale(1)';
+        }, 200);
+    }
+    
+    // Configurar eventos
+    imagemElement.addEventListener('click', trocarFoto);
+    
+    // Container para melhor toque (se clicar na moldura tb)
+    const molduraDiv = document.querySelector('.moldura');
+    if (molduraDiv) {
+        molduraDiv.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'IMG') {
+                trocarFoto();
+            }
+        });
+    }
+    
+    surpresaBtn.addEventListener('click', mostrarSurpresa);
+    
+    // Inicialização da página: verificação de existência das imagens e setup
+    window.addEventListener('load', function() {
+        criarIndicadores();
+        atualizarIndicadores();
+        // Verificar se a imagem inicial carrega, senão usar fallback elegante
+        const testImg = new Image();
+        testImg.onload = () => console.log("✅ Pasta fotos OK");
+        testImg.onerror = () => {
+            console.warn("⚠️ Atenção: As imagens f1.jpg, f2.jpg, f3.jpg não foram encontradas na pasta 'fotos'.");
+            // Aplicamos placeholder carinhoso na primeira imagem
+            if (imagemElement.src.includes("fotos/f1.jpg")) {
+                imagemElement.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fce4ec'/%3E%3Ccircle cx='150' cy='130' r='45' fill='%23f8bbd0'/%3E%3Cpath d='M100 200 L200 200 L220 260 L80 260 Z' fill='%23f48fb1'/%3E%3Ctext x='150' y='180' text-anchor='middle' fill='%238c2e5a' font-size='16' font-weight='bold'%3E🌹 Para Mamãe 🌹%3C/text%3E%3Ctext x='150' y='230' text-anchor='middle' fill='%23943e6b' font-size='12'%3EClique e sinta o amor%3C/text%3E%3C/svg%3E";
+            }
+        };
+        testImg.src = fotos[0];
+        
+        // Forçar primeira frase bonita caso ja exista.
+        const primeiraFrase = frasesAmor[0];
+        if (primeiraFrase) {
+            const pElem = fraseDiv.querySelector('p');
+            const assElem = fraseDiv.querySelector('.assinatura');
+            if (pElem) pElem.innerHTML = primeiraFrase.texto;
+            if (assElem) assElem.innerHTML = primeiraFrase.assinatura;
+        }
+        
+        // ajuste de transparencia inicial
         document.querySelector('.container').style.opacity = '0';
         setTimeout(() => {
-            document.querySelector('.container').style.transition = 'opacity 0.5s';
+            document.querySelector('.container').style.transition = 'opacity 0.6s';
             document.querySelector('.container').style.opacity = '1';
-        }, 100);
-    </script>
+        }, 80);
+    });
+    
+    // Caso a imagem principal dê erro ao tentar carregar no começo
+    imagemElement.onerror = tratarErroImagem;
+</script>
 </body>
 </html>
